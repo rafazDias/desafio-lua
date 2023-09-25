@@ -19,7 +19,12 @@
 ]]
 
 os.execute("chcp 65001")
+--interface
+local Structure = "================================================================="
+
+
 --Criatura
+local nivelPokemon = 5
 local monsterName = "Charmander"
 local description = "Charmander é um Pokémon do Tipo Fogo. A sua cauda representa sua saúde e felicidade."
 local emoji = "🔥"
@@ -53,17 +58,21 @@ local function getProgressBar (attribute)
 end
 
 --Habilidades
-local scratch = "Arranha o adversário"
-local growl = "Intimida o adversário, o deixando mais fraco"
+local scratchDamage = 4
+local growlDamage = 0
+local emberDamage = 6
+local scratchAbility =  "Arranha o adversário"
+local growlAbility =  "Intimida o adversário, Diminuindo seu ataque"
+local emberAbility = "Lança uma bola de fogo"
 
-print("=================================================================")
+print(Structure)
 print("| Nome do Pokémon: " .. monsterName)
 print("| Descrição do Pokemon: " .. description)
 print("|")
-print("|")
-print("|   Emoji favorito:".. emoji)
+print("|   Nivel: " .. nivelPokemon)
+print("|   Emoji favorito: ".. emoji)
 print("|   Som: " .. sound)
-print("|   Horario favorito: " .. favoriteTime)
+print("|   Horário favorito: " .. favoriteTime)
 print("|   Item na Mão: " .. heldItem)
 print("|")
 print("|")
@@ -76,7 +85,13 @@ print("| Ataque Especial: " .. getProgressBar(specialAttackAttribute))
 print("| Defesa Especial: " .. getProgressBar(specialDefenseAttribute))
 print("| Inteligencia:    " .. getProgressBar(inteligenceAttribute))
 print("|")
-print("|    Habilidades")
-print("|    Scratch:  " .. scratch)
-print("|    Growl:    " .. growl)
-print("=================================================================")
+print("|    Habilidades", "DANO")
+print("|    Scratch  " .. getProgressBar(scratchDamage))
+print("| Descrição da Habilidade: ".. scratchAbility)
+print("|    Growl    " .. getProgressBar(growlDamage))
+print("| Descrição da Habilidade: ".. growlAbility)
+print("|    Ember    " .. getProgressBar(emberDamage))
+print("| Descrição da Habilidade: ".. emberAbility)
+print("|")
+print("|")
+print(Structure)
